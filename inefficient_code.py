@@ -5,6 +5,7 @@ This file contains common performance anti-patterns that should be avoided
 """
 
 import time
+import copy
 
 
 def inefficient_string_concatenation(items):
@@ -133,7 +134,6 @@ def inefficient_deep_copy(data):
     """
     BAD: Creating unnecessary deep copies
     """
-    import copy
     results = []
     for i in range(100):
         # Making a deep copy when a shallow copy or reference would suffice

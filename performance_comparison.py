@@ -15,7 +15,7 @@ import inefficient_code
 import optimized_code
 
 
-def benchmark(func, *args, iterations=5):
+def benchmark(func, *args, iterations=10):
     """Run a function multiple times and return average execution time"""
     times = []
     for _ in range(iterations):
@@ -165,10 +165,10 @@ def main():
     data = [1, 2, "3", "4", "invalid", 5, "6", 7, "not a number", 8, 9]
     
     inefficient_time, inefficient_result = benchmark(
-        inefficient_code.inefficient_exception_handling, data, iterations=1000
+        inefficient_code.inefficient_exception_handling, data
     )
     optimized_time, optimized_result = benchmark(
-        optimized_code.optimized_exception_handling, data, iterations=1000
+        optimized_code.optimized_exception_handling, data
     )
     
     print(f"Inefficient (try/except): {inefficient_time:.6f} seconds")

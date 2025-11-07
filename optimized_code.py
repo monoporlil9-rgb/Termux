@@ -20,13 +20,7 @@ def optimized_list_search(data, target):
     GOOD: Using set for membership checks
     Set lookup is O(1) average case
     """
-    seen = set()
-    for item in data:
-        if item not in seen:
-            seen.add(item)
-        if item == target:
-            return True
-    return False
+    return target in set(data)
 
 
 def optimized_nested_loops(list1, list2):
